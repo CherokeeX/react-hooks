@@ -1,6 +1,11 @@
 import Note from "./Note";
+import NotesContext from "../contexts/notesContext";
+import { useContext } from "react";
 
-const NoteList = ({ notes, dispatch }) => {
+
+
+const NoteList = () => {
+    const {notes,dispatch} = useContext(NotesContext);
     return notes.length > 0 ? 
     (
         <div className="note-list">
@@ -10,7 +15,7 @@ const NoteList = ({ notes, dispatch }) => {
         </div>
     ) : 
     (
-        <div className="empty">Henüz not eklemediniz.</div>
+        <div className="empty">THERE IS NO NOTE YET </div>
     );
 
 }
